@@ -1,9 +1,11 @@
 def calcola_somma_utente():
-    
-    #Chiede all'utente quanti numeri sommare e ne restituisce il totale.
+    """
+    Chiede all'utente quanti numeri sommare e ne restituisce il totale.
+    """
     try:
         # Chiediamo il numero di elementi da processare
-        quantita = int(input("Quanti valori vuoi sommare? "))
+        quantita_input = input("Quanti valori vuoi sommare? ")
+        quantita = int(quantita_input)
         
         if quantita <= 0:
             print("Per favore, inserisci un numero maggiore di zero.")
@@ -22,8 +24,10 @@ def calcola_somma_utente():
         print("Errore: devi inserire un numero valido!")
         return None
 
-# Chiamata della funzione e stampa del risultato
-risultato = calcola_somma_utente()
-
-if risultato is not None:
-    print(f"\nLa somma totale è: {risultato}")
+# --- IMPORTANTE: Proteggi l'esecuzione automatica ---
+if __name__ == "__main__":
+    # Questo blocco viene eseguito SOLO se lanci direttamente questo file.
+    # Se il file viene IMPORTATO dai test, questa parte viene ignorata.
+    risultato = calcola_somma_utente()
+    if risultato is not None:
+        print(f"\nLa somma totale è: {risultato}")
