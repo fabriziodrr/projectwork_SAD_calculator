@@ -1,7 +1,7 @@
 from addizione import calcola_somma_utente
 from sottrazione import sottrazione_vettore
 from moltiplicazione import moltiplicazione
-from divisione import divisione
+from divisione import calcola_divisione_utente
 
 
 def menu_principale():
@@ -19,13 +19,9 @@ def menu_principale():
 
 def operazione_divisione():
     """Funzione wrapper per la divisione che gestisce l'input dell'utente."""
-    try:
-        a = float(input("Inserisci il primo numero (dividendo): "))
-        b = float(input("Inserisci il secondo numero (divisore): "))
-        risultato = divisione(a, b)
-        print(f"\nRisultato della divisione: {a} / {b} = {risultato}")
-    except ValueError as e:
-        print(f"Errore: {e}")
+    risultato = calcola_divisione_utente()
+    if risultato is not None:
+        print(f"\nRisultato della divisione: {risultato}")
 
 
 def main():
@@ -37,6 +33,8 @@ def main():
         if scelta == "1":
             print("\n--- ADDIZIONE ---")
             risultato = calcola_somma_utente()
+            if risultato is not None:
+                print(f"\nLa somma totale è: {risultato}")
             
         elif scelta == "2":
             print("\n--- SOTTRAZIONE ---")
