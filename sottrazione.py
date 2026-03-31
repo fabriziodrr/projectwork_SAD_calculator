@@ -3,10 +3,9 @@ def sottrazione_vettore():
     
     if n < 1:
         print("Devi inserire almeno un numero.")
-        return
+        return None 
 
     vettore = []
-
     for i in range(n):
         numero = float(input(f"Inserisci il numero {i+1}: "))
         vettore.append(numero)
@@ -15,7 +14,7 @@ def sottrazione_vettore():
     for i in range(1, len(vettore)):
         risultato -= vettore[i]
 
-    print(f"\nIl vettore inserito è: {vettore}")
-    print(f"Il risultato della sottrazione progressiva è: {risultato}")
-
-sottrazione_vettore()
+    print(f"Il risultato è: {risultato}")
+    
+    
+    return risultato 
