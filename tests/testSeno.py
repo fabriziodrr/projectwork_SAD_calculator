@@ -1,7 +1,14 @@
+import os
+import sys
+# Aggiunge la cartella del progetto al PYTHONPATH per eseguire i test sia da root sia direttamente
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
+
 import unittest
 import math
 # Importiamo la funzione dal tuo file seno.py
-from seno import calcola_seno
+from src.seno import calcola_seno
 
 class TestSeno(unittest.TestCase):
 

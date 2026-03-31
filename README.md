@@ -12,22 +12,37 @@ SAD Calculator è un progetto didattico che dimostra i principi della programmaz
 - **Sottrazione**: Sottrazione progressiva di più numeri
 - **Moltiplicazione**: Moltiplicazione di più numeri
 - **Divisione**: Divisione progressiva di più numeri con gestione degli errori
+- **Seno/Coseno/Tangente/Arcoseno/Arcocoseno**: Funzioni trigonometriche sugli angoli in gradi
 - **Menu Interattivo**: Interfaccia user-friendly con ciclo continuo
+- **Cronologia**: Log delle operazioni eseguite in sessione
 
 ## 📁 Struttura del Progetto
 
 ```
 projectwork_SAD_calculator/
 ├── main.py                    # File principale con menu interattivo
-├── addizione.py               # Modulo per le operazioni di addizione
-├── sottrazione.py             # Modulo per le operazioni di sottrazione
-├── moltiplicazione.py         # Modulo per le operazioni di moltiplicazione
-├── divisione.py               # Modulo per le operazioni di divisione
-├── testSomma.py               # Test unitari per addizione
-├── testSottrazione.py         # Test unitari per sottrazione
-├── testMoltiplicazione.py     # Test unitari per moltiplicazione
-├── testDivisione.py           # Test unitari per divisione
-└── README.md                  # Questo file
+├── README.md                  # Documentazione del progetto
+├── src/                       # Moduli operativi
+│   ├── addizione.py
+│   ├── sottrazione.py
+│   ├── moltiplicazione.py
+│   ├── divisione.py
+│   ├── seno.py
+│   ├── coseno.py
+│   ├── tangente.py
+│   ├── arcoseno.py
+│   └── arcocoseno.py
+└── tests/                     # Test unitari di tutti i moduli
+    ├── testSomma.py
+    ├── testSottrazione.py
+    ├── testMoltiplicazione.py
+    ├── testDivisione.py
+    ├── testSeno.py
+    ├── testCoseno.py
+    ├── testTangente.py
+    ├── testArcoseno.py
+    ├── testArcocoseno.py
+    └── testCotangente.py
 ```
 
 ## 🚀 Come Utilizzare
@@ -50,56 +65,44 @@ CALCOLATRICE MODULARE - SAD Calculator
 2. Sottrazione (sottrazione progressiva)
 3. Moltiplicazione
 4. Divisione
-5. Esci
+5. Seno
+6. Coseno
+7. Tangente
+8. Arcoseno
+9. Arcocoseno
+10. Cotangente
+11. Cronologia
+12. Esci
 ==================================================
 ```
 
-Scegli un numero (1-5) e segui le istruzioni per eseguire l'operazione desiderata.
-
 ## 🧪 Test Unitari
 
-Per eseguire i test di ogni modulo:
+`main.py` supporta il comando speciale `ans` in tutti i prompt numerici, che sostituisce l'ultimo valore calcolato valido.
+
+Esegui i test con:
 
 ```bash
-# Test addizione
-python testSomma.py
-
-# Test sottrazione
-python testSottrazione.py
-
-# Test moltiplicazione
-python testMoltiplicazione.py
-
-# Test divisione
-python testDivisione.py
+cd tests
+python -m unittest
 ```
 
 ## 📚 Dettagli Moduli
 
-### addizione.py
-Gestisce operazioni di addizione permettendo all'utente di inserire più numeri e calcolarne la somma totale.
-
-### sottrazione.py
-Implementa la sottrazione progressiva: il primo numero inserito è il minuendo, i successivi sono sottratti in sequenza.
-
-### moltiplicazione.py
-Calcola il prodotto di più numeri inseriti dall'utente.
-
-### divisione.py
-Esegue divisioni progressive con gestione degli errori (divisione per zero). Il primo numero è il dividendo, i successivi sono divisori applicati in sequenza.
+- `src/addizione.py`: operazioni di addizione
+- `src/sottrazione.py`: operazioni di sottrazione
+- `src/moltiplicazione.py`: operazioni di moltiplicazione
+- `src/divisione.py`: operazioni di divisione
+- `src/seno.py`: funzione seno in gradi
+- `src/coseno.py`: funzione coseno in gradi
+- `src/tangente.py`: funzione tangente in gradi
+- `src/arcoseno.py`: arcoseno in gradi
+- `src/arcocoseno.py`: arcocoseno in gradi
 
 ## 🔧 Requisiti
 
 - Python 3.6+
 - Nessuna libreria esterna richiesta
-
-## 📝 Note di Sviluppo
-
-Il progetto segue i principi di:
-- **Modularità**: Ogni operazione è in un modulo separato
-- **Separazione dei Compiti**: Logica di input/output separata dalla logica di calcolo
-- **Test Driven Development**: Ogni modulo è accompagnato da test unitari
-- **Codice Leggibile**: Funzioni ben documentate con docstring
 
 ## 👨‍💻 Autore
 
