@@ -1,39 +1,30 @@
 import unittest
 from unittest.mock import patch
-# Assicurati che la funzione sia importata correttamente o definita nello stesso file
-# from nome_file import calcola_somma_utente
+from addizione import calcola_somma_utente
 
 class TestSommaUtente(unittest.TestCase):
 
+    @patch('builtins.print') # Silenzia l'output
     @patch('builtins.input', side_effect=['3', '10', '20', '5.5'])
-    def test_somma_tre_valori(self, mock_input):
-        """
-        Testa se la funzione somma correttamente 3 valori: 10 + 20 + 5.5 = 35.5
-        """
+    def test_somma_tre_valori(self, mock_input, mock_print):
         risultato = calcola_somma_utente()
         self.assertEqual(risultato, 35.5)
 
+    @patch('builtins.print')
     @patch('builtins.input', side_effect=['2', '0', '-5'])
-    def test_somma_valori_negativi(self, mock_input):
-        """
-        Testa la somma con numeri negativi e zero: 0 + (-5) = -5.0
-        """
+    def test_somma_valori_negativi(self, mock_input, mock_print):
         risultato = calcola_somma_utente()
         self.assertEqual(risultato, -5.0)
 
+    @patch('builtins.print')
     @patch('builtins.input', side_effect=['0'])
-    def test_quantita_zero(self, mock_input):
-        """
-        Testa il comportamento quando l'utente chiede di sommare 0 valori.
-        """
+    def test_quantita_zero(self, mock_input, mock_print):
         risultato = calcola_somma_utente()
         self.assertEqual(risultato, 0)
 
+    @patch('builtins.print')
     @patch('builtins.input', side_effect=['abc'])
-    def test_input_non_valido(self, mock_input):
-        """
-        Testa la gestione dell'errore (ValueError) se l'utente inserisce testo.
-        """
+    def test_input_non_valido(self, mock_input, mock_print):
         risultato = calcola_somma_utente()
         self.assertIsNone(risultato)
 
