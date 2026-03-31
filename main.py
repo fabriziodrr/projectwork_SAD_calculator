@@ -13,7 +13,12 @@ def menu_principale():
     print("2. Sottrazione (sottrazione progressiva)")
     print("3. Moltiplicazione")
     print("4. Divisione")
+<<<<<<< HEAD
     print("5. Esci")
+=======
+    print("5. Cronologia")
+    print("6. Esci")
+>>>>>>> origin/LuigiCocco
     print("="*50)
 
 
@@ -22,41 +27,92 @@ def operazione_divisione():
     risultato = calcola_divisione_utente()
     if risultato is not None:
         print(f"\nRisultato della divisione: {risultato}")
+<<<<<<< HEAD
+=======
+    return risultato
+>>>>>>> origin/LuigiCocco
 
 
 def main():
     """Funzione principale che gestisce il ciclo della calcolatrice."""
+<<<<<<< HEAD
     while True:
         menu_principale()
         scelta = input("\nScegli un'operazione (1-5): ").strip()
+=======
+    cronologia = []
+
+    while True:
+        menu_principale()
+        scelta = input("\nScegli un'operazione (1-6): ").strip()
+>>>>>>> origin/LuigiCocco
         
         if scelta == "1":
             print("\n--- ADDIZIONE ---")
             risultato = calcola_somma_utente()
             if risultato is not None:
                 print(f"\nLa somma totale è: {risultato}")
+<<<<<<< HEAD
             
         elif scelta == "2":
             print("\n--- SOTTRAZIONE ---")
             sottrazione_vettore()
+=======
+                cronologia.append(f"Addizione -> Risultato: {risultato}")
+            
+        elif scelta == "2":
+            print("\n--- SOTTRAZIONE ---")
+            risultato = sottrazione_vettore()
+            # Se la funzione non restituisce nulla, salva solo l'avvenuta esecuzione
+            valore_salvato = risultato if risultato is not None else "Eseguita"
+            cronologia.append(f"Sottrazione -> Risultato: {valore_salvato}")
+>>>>>>> origin/LuigiCocco
             
         elif scelta == "3":
             print("\n--- MOLTIPLICAZIONE ---")
             risultato = moltiplicazione()
             print(f"\nRisultato della moltiplicazione: {risultato}")
+<<<<<<< HEAD
             
         elif scelta == "4":
             print("\n--- DIVISIONE ---")
             operazione_divisione()
             
         elif scelta == "5":
+=======
+            cronologia.append(f"Moltiplicazione -> Risultato: {risultato}")
+            
+        elif scelta == "4":
+            print("\n--- DIVISIONE ---")
+            risultato = operazione_divisione()
+            if risultato is not None:
+                cronologia.append(f"Divisione -> Risultato: {risultato}")
+        
+        elif scelta == "5":
+            print("\n--- CRONOLOGIA ---")
+            if not cronologia:
+                print("Nessuna operazione in cronologia.")
+            else:
+                for i, op in enumerate(cronologia, 1):
+                    print(f"{i}. {op}")
+                    
+        elif scelta == "6":
+>>>>>>> origin/LuigiCocco
             print("\nGrazie per aver usato la Calcolatrice SAD!")
             print("Arrivederci!")
             break
             
         else:
+<<<<<<< HEAD
             print("Scelta non valida. Per favore, inserisci un numero tra 1 e 5.")
 
 
 if __name__ == "__main__":
     main()
+=======
+            print("Scelta non valida. Per favore, inserisci un numero tra 1 e 6.")
+
+
+if __name__ == "__main__":
+    main()
+>>>>>>> origin/LuigiCocco
